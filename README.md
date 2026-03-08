@@ -1,15 +1,3 @@
-<style>
-    .no-number li {
-        list-style-type: none;
-    }
-    .number li{
-        list-style-type: number
-    }
-    .no-border {
-        text-align: left;
-    }
-</style>
- 
 <div>
 <img src="https://raw.githubusercontent.com/deadbeef3137/ha-cloudflare-tunnel-monitor/master/images/logo.png" height="100">
 
@@ -101,20 +89,14 @@ When you provide a `metrics_url`, the integration unlocks ~50 additional sensors
 ## 🖼️ Screenshots
 
 <details>
-  <summary><strong style="color:deepskyblue;">📷 View screenshots</strong></summary>
-<div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    align-items: start;
-    margin-top: 10px;
-  ">
-    <img src="images/throughput.jpeg"      style="width:100%; height:auto; border-radius:10px;" alt="Example throughput card">
-    <img src="images/runtime.jpeg"         style="width:100%; height:auto; border-radius:10px;" alt="Example runtime card">
-    <img src="images/sessions.jpeg"        style="width:100%; height:auto; border-radius:10px;" alt="Example sessions card">
-    <img src="images/tunnel_overview.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example overview in Home Assistant">
-    <img src="images/latency.jpeg"         style="width:100%; height:auto; border-radius:10px;" alt="Example latency card">
-</div>
+    <summary><strong style="color:deepskyblue;">📷 View screenshots</strong></summary>
+    <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));gap: 12px;align-items: start;margin-top: 10px;">
+        <img src="images/throughput.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example throughput card">
+        <img src="images/runtime.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example runtime card">
+        <img src="images/sessions.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example sessions card">
+        <img src="images/tunnel_overview.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example overview in Home Assistant">
+        <img src="images/latency.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example latency card">
+    </div>
 </details>
 
 ## 🧰 Installation
@@ -125,13 +107,13 @@ When you provide a `metrics_url`, the integration unlocks ~50 additional sensors
     <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=deadbeef3137&repository=ha-cloudflare-tunnel-monitor&category=integration" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="35" alt="Open in HACS"></a>
 2. Click **Download**
 3. Restart Home Assistant
-<ol class="no-number">
+<ol style="list-style-type: none;">
     <li>
         <details>
             <summary>
                 <span><strong style="color:deepskyblue;">Via HACS UI</strong></span>
             </summary>
-            <ol class="number">
+            <ol style="list-style-type: number;">
                 <li>Open <b>HACS</b> in Home Assistant.</li>
                 <li>Search for <b>Cloudflare Tunnel Monitor</b> and select it.</li>
                 <li>Click <b>Download</b> to install the repository.</li>
@@ -143,14 +125,14 @@ When you provide a `metrics_url`, the integration unlocks ~50 additional sensors
 
 4. Then add the integration in Home Assistant:  
     <a href="https://my.home-assistant.io/redirect/integration/?domain=cloudflare_tunnel_monitor" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/integration.svg" height="35" alt="Add integration in Home Assistant"></a>
-<ol class="no-number">
+<ol ol style="list-style-type: none;">
     <li>
         <details> 
             <summary> 
                 <span><strong style="color:deepskyblue;">Via Home Assistant UI</strong></span> 
             </summary> 
             <div style="text-align: left;">
-                <ol class="number">
+                <ol style="list-style-type: number;">
                     <li>Navigate to <b>Settings</b> → <b>Devices & Services</b> → <b>Add Integration</b>.</li>
                     <li>Search for <b>Cloudflare Tunnel Monitor</b> and select it.</li>
                     <li>Fill in the required <a href="#-configuration">configuration</a> and click <b>Submit</b>.</li>

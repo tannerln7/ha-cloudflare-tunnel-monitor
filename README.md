@@ -88,14 +88,14 @@ When you provide a `metrics_url`, the integration unlocks **~50 additional senso
 
 <details>
     <summary><strong style="color:deepskyblue;">📷 View screenshots</strong></summary>
-    <br>
-    <div align="center">
-        <img src="images/throughput.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Throughput">
-        <img src="images/runtime.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Runtime">
-        <img src="images/sessions.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Sessions">
-        <img src="images/tunnel_overview.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Overview">
-        <img src="images/latency.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Latency">
-    </div>
+
+<div align="center">
+    <a href="images/throughput.jpeg"><img src="images/throughput.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Throughput"></a>
+    <a href="images/runtime.jpeg"><img src="images/runtime.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Runtime"></a>
+    <a href="images/sessions.jpeg"><img src="images/sessions.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Sessions"></a>
+    <a href="images/tunnel_overview.jpeg"><img src="images/tunnel_overview.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Overview"></a>
+    <a href="images/latency.jpeg"><img src="images/latency.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Latency"></a>
+</div>
 </details>
 
 ## ✅ Install via HACS (Recommended)
@@ -137,7 +137,7 @@ into:  `config/custom_components/`
 ### 1. Navigate to your Cloudflare dashboard and copy your **Account ID**
 
 <details> 
-<summary>🧾 Show Account ID Page</strong></summary>
+<summary>🧾 Show Account ID Page</summary>
 
 <img src="https://raw.githubusercontent.com/deadbeef3137/imagenes-readme/master/AccountID.png" width="500" alt="Cloudflare Account ID location"> 
 </details>

@@ -17,7 +17,7 @@ Cloudflare Tunnel Monitor is a Home Assistant integration that lets you **see tu
 - ✅ **Tunnel status sensors** (healthy / degraded / inactive / down) via the Cloudflare API  
 - 📈 **Optional cloudflared Prometheus metrics** for RTT, throughput, latency baselines, request errors, sessions, and process health
 
-Prometheus metrics support has been implemented — thanks to @tannerln7.
+Prometheus metrics support has been implemented — thanks to [@tannerln7](https://github.com/tannerln7).
 
 ## ✨ Features
 
@@ -27,7 +27,7 @@ Prometheus metrics support has been implemented — thanks to @tannerln7.
 - 🔔 Build automations like: notify on `down`, or only allow actions when tunnel is `healthy`
 
 ### 📈 Metrics Mode
-When you provide a `metrics_url`, the integration unlocks ~50 additional sensors that give you **real operational visibility** into your tunnel and the cloudflared process.
+When you provide a `metrics_url`, the integration unlocks **~50 additional sensors** that give you **real operational visibility** into your tunnel and the cloudflared process.
 
 #### ⚡ QUIC Health & Latency:
 - 🔗 **Active QUIC connections**
@@ -76,8 +76,6 @@ When you provide a `metrics_url`, the integration unlocks ~50 additional sensors
 
 > 📎 Full sensor list and mapping: **[`sensor-map.md`](sensor-map.md)**
 
----
-
 ### 💡 What you can do with these sensors
 - 🔔 Alert when **tunnel is up** but **p95 RTT spikes**
 - 📉 Detect **throughput drops to zero** while tunnel remains connected
@@ -90,97 +88,70 @@ When you provide a `metrics_url`, the integration unlocks ~50 additional sensors
 
 <details>
     <summary><strong style="color:deepskyblue;">📷 View screenshots</strong></summary>
-    <div style="display: grid;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));gap: 12px;align-items: start;margin-top: 10px;">
-        <img src="images/throughput.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example throughput card">
-        <img src="images/runtime.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example runtime card">
-        <img src="images/sessions.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example sessions card">
-        <img src="images/tunnel_overview.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example overview in Home Assistant">
-        <img src="images/latency.jpeg" style="width:100%; height:auto; border-radius:10px;" alt="Example latency card">
+    <br>
+    <div align="center">
+        <img src="images/throughput.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Throughput">
+        <img src="images/runtime.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Runtime">
+        <img src="images/sessions.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Sessions">
+        <img src="images/tunnel_overview.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Overview">
+        <img src="images/latency.jpeg" width="18%" align="top" style="border-radius:10px;" alt="Latency">
     </div>
 </details>
 
-## 🧰 Installation
-
-### ✅ Install via HACS (Recommended)
-
-1. Click the **Open HACS Repository** button  
-    <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=deadbeef3137&repository=ha-cloudflare-tunnel-monitor&category=integration" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="35" alt="Open in HACS"></a>
+## ✅ Install via HACS (Recommended)
+1. Click the **Open HACS Repository** button:  
+<a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=deadbeef3137&repository=ha-cloudflare-tunnel-monitor&category=integration" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" height="35" alt="Open in HACS"></a>
 2. Click **Download**
 3. Restart Home Assistant
-<ol style="list-style-type: none;">
-    <li>
-        <details>
-            <summary>
-                <span><strong style="color:deepskyblue;">Via HACS UI</strong></span>
-            </summary>
-            <ol style="list-style-type: number;">
-                <li>Open <b>HACS</b> in Home Assistant.</li>
-                <li>Search for <b>Cloudflare Tunnel Monitor</b> and select it.</li>
-                <li>Click <b>Download</b> to install the repository.</li>
-                <li>Restart Home Assistant.</li>
-            </ol>
-        </details>
-    </li>
-</ol>
+4. Click the **Add integration in Home Assistant** button:  
+<a href="https://my.home-assistant.io/redirect/integration/?domain=cloudflare_tunnel_monitor" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/integration.svg" height="35" alt="Add integration in Home Assistant"></a>
+5. Fill in the required <a href="#conf">configuration</a> and click <b>Submit</b>.
 
-4. Then add the integration in Home Assistant:  
-    <a href="https://my.home-assistant.io/redirect/integration/?domain=cloudflare_tunnel_monitor" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/integration.svg" height="35" alt="Add integration in Home Assistant"></a>
-<ol ol style="list-style-type: none;">
-    <li>
-        <details> 
-            <summary> 
-                <span><strong style="color:deepskyblue;">Via Home Assistant UI</strong></span> 
-            </summary> 
-            <div style="text-align: left;">
-                <ol style="list-style-type: number;">
-                    <li>Navigate to <b>Settings</b> → <b>Devices & Services</b> → <b>Add Integration</b>.</li>
-                    <li>Search for <b>Cloudflare Tunnel Monitor</b> and select it.</li>
-                    <li>Fill in the required <a href="#-configuration">configuration</a> and click <b>Submit</b>.</li>
-                </ol>
-            </div> 
-        </details>
-    </li>
-</ol>
+<details>
+<summary>🛠️ HACS UI (Manual)</summary>
 
-### 🛠️ Manual Installation
-
-1. Download this repository (or clone it).
-2. Copy:
-
-   `custom_components/cloudflare_tunnel_monitor`
-
-   into:
-
-   `config/custom_components/`
-
-3. Restart Home Assistant.
-
-## ⚙️ Configuration
-
-### 1️⃣ Navigate to your Cloudflare dashboard and copy your **Account ID**
-
-<details> 
-    <summary> 
-        <span><strong style="color:deepskyblue;">🧾 Show Account ID Page</strong></span> 
-    </summary> 
-    <div style="text-align: left;"> 
-        <img src="https://raw.githubusercontent.com/deadbeef3137/imagenes-readme/master/AccountID.png" width="500" alt="Cloudflare Account ID location"> 
-    </div> 
+1. Open HACS in Home Assistant.
+2. Search for **Cloudflare Tunnel Monitor** and select it.
+3. Click **Download** to install the repository.
+4. Restart Home Assistant.
 </details>
 
-### 2️⃣ Create an API token with this permission:
+<details> 
+<summary>🛠️ Home Assistant UI (Manual)</summary> 
+
+1. Navigate to **Settings** → **Devices & Services** → **Add Integration**.  
+2. Search for **Cloudflare Tunnel Monitor** and select it.
+</details>
+
+<details>
+<summary>🛠️ Manual Installation</summary>
+
+1. Download this repository (or clone it).
+2. Copy:  `custom_components/cloudflare_tunnel_monitor`  
+into:  `config/custom_components/`  
+3. Restart Home Assistant.
+</details>
+
+## <a id="conf">⚙️ Configuration</a>
+
+### 1. Navigate to your Cloudflare dashboard and copy your **Account ID**
+
+<details> 
+<summary>🧾 Show Account ID Page</strong></summary>
+
+<img src="https://raw.githubusercontent.com/deadbeef3137/imagenes-readme/master/AccountID.png" width="500" alt="Cloudflare Account ID location"> 
+</details>
+
+### 2. Create an API token with this permission:
 ```
 Account
 └ Cloudflare Tunnel
     └ Read
 ```
 <details> 
-    <summary> 
-        <span><strong style="color:deepskyblue;">🔐 Show Permissions Page</strong></span>
-    </summary>
-    <div style="text-align: left;">
-        <img src="https://raw.githubusercontent.com/deadbeef3137/imagenes-readme/master/API-Token.png" width="500" alt="Cloudflare API token creation"> 
-    </div> 
+<summary> 🔐 Show Permissions Page</summary>
+
+<img src="https://raw.githubusercontent.com/deadbeef3137/imagenes-readme/master/API-Token.png" width="500" alt="Cloudflare API token creation"> 
 </details>
 
 ### 🧾 Configuration Variables
@@ -223,4 +194,5 @@ This project is not affiliated with or endorsed by Cloudflare. Cloudflare® is a
 [hacs]: https://hacs.xyz
 
 [license-badge]: https://img.shields.io/github/license/deadbeef3137/ha-cloudflare-tunnel-monitor?style=for-the-badge
+
 [license]: https://github.com/deadbeef3137/ha-cloudflare-tunnel-monitor/blob/master/LICENSE
